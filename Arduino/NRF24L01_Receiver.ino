@@ -15,9 +15,9 @@ void setup() {
 
 void loop() {
   if (radio.available()) {
-    char receivedMessage[32]; // Buffer to store received data
-    radio.read(&receivedMessage, sizeof(receivedMessage));
-    Serial.print("Message: ");
-    Serial.println(receivedMessage); // Print the received message
+    char text[32] = "";
+    radio.read(&text, sizeof(text));
+    Serial.print("Received: ");
+    Serial.println(text);
   }
 }
